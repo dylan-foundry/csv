@@ -14,4 +14,14 @@ define module csv
   export <csv-reader>;
 
   export <csv-writer>, write-row, write-rows;
+
+  export
+    $csv-quote-all,
+    $csv-quote-minimal,
+    $csv-quote-non-numeric,
+    $csv-quote-none,
+    <csv-dialect>,
+    $excel-dialect,
+    $excel-tsv-dialect;
+
 end module;
