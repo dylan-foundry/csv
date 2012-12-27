@@ -1,7 +1,7 @@
 module: csv
-synopsis: Some shared code for dealing with CSV files.
-author: Bruce Mitchener
-copyright: 2012, Data Fueled, LLC.
+synopsis: Specify various aspects of dialects of CSV files.
+author: Bruce Mitchener, Jr.
+copyright: See LICENSE file in this distribution.
 
 define constant $csv-quote-minimal = 0;
 define constant $csv-quote-all = 1;

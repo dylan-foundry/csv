@@ -1,7 +1,7 @@
 module: csv
-synopsis: Routines for reading CSV files.
-author: Bruce Mitchener
-copyright: 2012, Data Fueled, LLC.
+synopsis: Routines for writing CSV files.
+author: Bruce Mitchener, Jr.
+copyright: See LICENSE file in this distribution.
 
 define class <csv-writer> (<object>)
   constant slot csv-stream :: <stream>, required-init-keyword: stream:;
