@@ -13,7 +13,8 @@ define module csv
 
   export <csv-reader>;
 
-  export <csv-writer>, write-row, write-rows;
+  export <csv-writer>, write-row, write-rows,
+    as-csv-string;
 
   export
     $csv-quote-all,

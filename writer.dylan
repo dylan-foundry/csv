@@ -22,22 +22,35 @@ define method write-rows (writer :: <csv-writer>, rows)
   end for;
 end;
 
-define inline function internal-write-row(stream :: <stream>, dialect :: <csv-dialect>, row :: <sequence>)
+define inline function internal-write-row (stream :: <stream>, dialect :: <csv-dialect>, row :: <sequence>)
   for (field in row,
        first? = #t then #f)
     unless (first?)
       write(stream, dialect.csv-delimiter);
     end;
-    write(stream, to-csv-string(field));
+    write(stream, as-csv-string(field));
   end for;
   write(stream, "\r\n");
 end;
 
-define function to-csv-string(field :: <object>) => (s :: <string>)
-  select (field by instance?)
-    <integer> => integer-to-string(field);
-    <float> => float-to-string(field);
-    <string> => field;
-    otherwise => error("invalid datatype");
-  end;
+define generic as-csv-string (field) => (s :: <string>);
+
+define method as-csv-string (field :: <integer>)
+ => (s :: <string>)
+  integer-to-string(field)
+end;
+
+define method as-csv-string (field :: <float>)
+ => (s :: <string>)
+  float-to-string(field)
+end;
+
+define method as-csv-string (field :: <string>)
+ => (s :: <string>)
+  field
+end;
+
+define method as-csv-string (field)
+ => (s :: <string>)
+   format-to-string("%s", field)
 end;
