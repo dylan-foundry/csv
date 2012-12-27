@@ -21,7 +21,11 @@ define module csv
     $csv-quote-non-numeric,
     $csv-quote-none,
     <csv-dialect>,
+    csv-delimiter,
+    csv-double-quote?,
+    csv-escape-character,
+    csv-quote-character,
+    csv-quoting,
     $excel-dialect,
     $excel-tsv-dialect;
-
 end module;

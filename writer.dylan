@@ -26,7 +26,7 @@ define inline function internal-write-row(stream :: <stream>, dialect :: <csv-di
   for (field in row,
        first? = #t then #f)
     unless (first?)
-      write(stream, dialect.delimiter);
+      write(stream, dialect.csv-delimiter);
     end;
     write(stream, to-csv-string(field));
   end for;

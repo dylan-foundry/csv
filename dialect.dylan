@@ -15,11 +15,11 @@ define constant <csv-quoting> = one-of(
   $csv-quote-none);
 
 define class <csv-dialect> (<object>)
-  constant slot delimiter = ",", init-keyword: delimiter:;
-  constant slot double-quote = #t, init-keyword: double-quote:;
-  constant slot escape-character :: false-or(<character>) = #f, init-keyword: escape-character:;
-  constant slot quote-character = '"', init-keyword: quote-character:;
-  constant slot quoting :: <csv-quoting> = $csv-quote-minimal, init-keyword: quoting:;
+  constant slot csv-delimiter = ",", init-keyword: delimiter:;
+  constant slot csv-double-quote? = #t, init-keyword: double-quote:;
+  constant slot csv-escape-character :: false-or(<character>) = #f, init-keyword: escape-character:;
+  constant slot csv-quote-character = '"', init-keyword: quote-character:;
+  constant slot csv-quoting :: <csv-quoting> = $csv-quote-minimal, init-keyword: quoting:;
 end;
 
 define constant $excel-dialect = make(<csv-dialect>);
