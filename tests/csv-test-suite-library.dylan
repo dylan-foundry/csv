@@ -13,6 +13,7 @@ define module csv-test-suite
   use common-dylan, exclude: { format-to-string };
   use format;
   use csv;
+  use streams;
   use testworks;
 
   export csv-test-suite;
