@@ -19,7 +19,7 @@ end;
 define inline function csv-reader-size
     (csv-reader :: <csv-reader>)
  => (reader-size :: <integer>)
- 0 // TODO: return the file legth
+ 0 // TODO: return the file length
 end function;
 
 define inline function csv-reader-next-state
